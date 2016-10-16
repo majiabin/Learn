@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Learn.Core.Domain;
 using Learn.IData;
 
 namespace Learn.Data.Context
@@ -33,6 +34,13 @@ namespace Learn.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            ////Role表和Employee表是多对多关系
+            //modelBuilder.Entity<Role>().HasMany(c => c.Employees).WithMany(a => a.Roles).Map(m =>
+            //{
+            //    m.ToTable("EmpRoleRelation");
+            //    m.MapLeftKey("RoleId");
+            //    m.MapRightKey("EmpId");
+            //});
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Configurations.AddFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(modelBuilder);

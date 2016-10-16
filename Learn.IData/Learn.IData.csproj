@@ -49,10 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDepartmentRepository.cs" />
     <Compile Include="IBaseRepository.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="IDBSession.cs" />
-    <Compile Include="IUserInfoRepository.cs" />
+    <Compile Include="IEmployeeRepository.cs" />
+    <Compile Include="IRoleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

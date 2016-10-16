@@ -40,9 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Classroom.cs" />
-    <Compile Include="Domain\Student.cs" />
+    <Compile Include="Domain\Department.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="Domain\EmpRoleRealationship.cs" />
+    <Compile Include="Domain\Permission.cs" />
+    <Compile Include="Domain\Role.cs" />
+    <Compile Include="Domain\RolePerRelationship.cs" />
     <Compile Include="Domain\UserInfo.cs" />
+    <Compile Include="Domain\VipPermssion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

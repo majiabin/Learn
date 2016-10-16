@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Learn.Core.Domain;
+using Learn.IData;
 
-namespace Learn.IService
+namespace Learn.Data
 {
-    public interface IRoleService:IBaseService<Role>
+   public class EmployeeRepository:BaseRepository<Employee>,IEmployeeRepository
     {
-       
     }
 }

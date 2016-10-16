@@ -52,12 +52,22 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="Context\ContextFactory.cs" />
     <Compile Include="Context\LearnContext.cs" />
-    <Compile Include="Mapping\ClassroomMap.cs" />
-    <Compile Include="Mapping\StudentMap.cs" />
-    <Compile Include="Mapping\UserInfoMap.cs" />
+    <Compile Include="DepartmentRepository.cs" />
+    <Compile Include="EmployeeRepository.cs" />
+    <Compile Include="Mapping\DepartmentMap.cs" />
+    <Compile Include="Mapping\EmployeeMap.cs" />
+    <Compile Include="Mapping\EmpRoleMap.cs" />
+    <Compile Include="Mapping\PermissionMap.cs" />
+    <Compile Include="Mapping\RoleMap.cs" />
+    <Compile Include="Mapping\RolePerRelationshipMap.cs" />
+    <Compile Include="Mapping\VipPermssionMap.cs" />
+    <Compile Include="Migrations\201610161552028_InitialCreate.cs" />
+    <Compile Include="Migrations\201610161552028_InitialCreate.Designer.cs">
+      <DependentUpon>201610161552028_InitialCreate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInfoRepository.cs" />
+    <Compile Include="RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,6 +82,11 @@
       <Project>{2b919f0b-7384-4798-a124-cd95c1da7b23}</Project>
       <Name>Learn.IData</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610161552028_InitialCreate.resx">
+      <DependentUpon>201610161552028_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,10 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Learn.Core.Domain;
 
-namespace Learn.IService
+namespace Learn.IData
 {
-    public interface IRoleService:IBaseService<Role>
+    public interface  IRoleRepository:IBaseRepository<Role>
     {
-       
     }
 }

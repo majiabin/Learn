@@ -7,8 +7,7 @@ using Learn.Core.Domain;
 
 namespace Learn.IService
 {
-    public interface IRoleService:IBaseService<Role>
+   public interface IDepartmentService:IBaseService<Department>
     {
-       
     }
 }

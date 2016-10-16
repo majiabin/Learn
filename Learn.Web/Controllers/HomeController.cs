@@ -12,19 +12,24 @@ namespace Learn.Web.Controllers
     public class HomeController : Controller
     {
 
-        private IUserInfoService userInfoService;
-     
+        private IRoleService roleService;
+        private IDepartmentService departmentService;
 
-        public HomeController(IRoleService roleService, IUserInfoService userInfoService)
+
+        public HomeController(IRoleService roleService, IDepartmentService departmentService)
         {
-            this.userInfoService = userInfoService;
+            this.departmentService = departmentService;
+            this.roleService = roleService;
         }
 
         // GET: Home
         public ActionResult Index()
         {
-           List<UserInfo> list= userInfoService.GetList(c=>c.Name=="zhangsan").ToList();
+         List<Department> lis=   departmentService.GetList(c => true).ToList();
             return View("Index");
         }
+
+
+
     }
 }

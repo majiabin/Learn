@@ -8,8 +8,7 @@ using Learn.IData;
 
 namespace Learn.Data
 {
-   public class UserInfoRepository:BaseRepository<UserInfo>,IUserInfoRepository
+   public class DepartmentRepository:BaseRepository<Department>,IDepartmentRepository
     {
-
     }
 }

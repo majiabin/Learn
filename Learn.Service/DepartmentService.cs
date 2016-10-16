@@ -8,11 +8,11 @@ using Learn.IService;
 
 namespace Learn.Service
 {
-    public class RoleService : BaseService<Role>, IRoleService
+    public partial class DepartmentService : BaseService<Department>, IDepartmentService
     {
         public override void SetCurrentDal()
         {
-            CurrentService = dbSession.RoleRepository;
+            CurrentService = dbSession.DepartmentRepository;
         }
     }
 }

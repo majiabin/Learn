@@ -41,9 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
+    <Compile Include="DepartmentService.cs" />
+    <Compile Include="EmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
-    <Compile Include="UserInfoService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Learn.Core\Learn.Core.csproj">

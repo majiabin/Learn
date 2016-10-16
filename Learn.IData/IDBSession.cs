@@ -8,8 +8,9 @@ namespace Learn.IData
 {
     public interface IDBSession
     {
-        IUserInfoRepository UserInfoRepository { get; }
-
+        IDepartmentRepository DepartmentRepository { get; }
+        IRoleRepository RoleRepository { get; }
+        IEmployeeRepository EmployeeRepository { get; }
         int SaveChanges();
     }
 }

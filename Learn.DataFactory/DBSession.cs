@@ -11,10 +11,30 @@ namespace Learn.DataFactory
 {
     public class DBSession : IDBSession
     {
-        public IUserInfoRepository UserInfoRepository
+        public IDepartmentRepository DepartmentRepository
         {
-            get { return new UserInfoRepository(); }
+            get
+            {
+                return new DepartmentRepository();
+            }
         }
+
+        public IRoleRepository RoleRepository
+        {
+            get
+            {
+                return new RoleRepository();
+            }
+        }
+
+        public IEmployeeRepository EmployeeRepository {
+            get
+            {
+                return new EmployeeRepository();
+            }
+        }
+
+      
 
         public int SaveChanges()
         {

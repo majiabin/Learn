@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Learn.Core.Domain;
 
-namespace Learn.IService
+namespace Learn.IData
 {
-    public partial interface IUserInfoService:IBaseService<UserInfo>
+   public  interface  IEmployeeRepository:IBaseRepository<Employee>
     {
     }
 }

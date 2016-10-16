@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Learn.Core.Domain;
 
-namespace Learn.IData
+namespace Learn.IService
 {
-    public partial interface IUserInfoRepository : IBaseRepository<UserInfo>
+   public interface IEmployeeService:IBaseService<Employee>
     {
-
+       int Login(Employee model);
     }
 }
