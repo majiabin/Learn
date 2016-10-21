@@ -24,6 +24,12 @@ namespace Learn.Service
             }
         }
 
+        public List<Permission> GetUserPermissions(int uId)
+        {
+
+            return null;
+        }
+
         public override void SetCurrentDal()
         {
             CurrentService = dbSession.EmployeeRepository;

@@ -9,6 +9,7 @@ using System.Web.Routing;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Learn.Data.Context;
+using Learn.Web.App_Start;
 
 namespace Learn.Web
 {
@@ -16,6 +17,7 @@ namespace Learn.Web
     {
         protected void Application_Start()
         {
+            FilterConfig.RegisterGlobalFilter(GlobalFilters.Filters);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoFac();

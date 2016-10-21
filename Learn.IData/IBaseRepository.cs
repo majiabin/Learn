@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Learn.IData
 {
-   public interface IBaseRepository<T>
+    public interface IBaseRepository<T>
     {
         #region 添加
         bool Add(T entity);
@@ -25,6 +25,8 @@ namespace Learn.IData
         #endregion
 
         #region 查询
+
+   
         IQueryable<T> GetList(Expression<Func<T, bool>> whereLamada);
 
         IQueryable<T> GetPage<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada,

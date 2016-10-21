@@ -43,6 +43,7 @@
     <Compile Include="BaseService.cs" />
     <Compile Include="DepartmentService.cs" />
     <Compile Include="EmployeeService.cs" />
+    <Compile Include="PermissionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleService.cs" />
   </ItemGroup>

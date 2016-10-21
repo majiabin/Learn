@@ -34,7 +34,14 @@ namespace Learn.DataFactory
             }
         }
 
-      
+        public IPermissionRepository PermissionRepository {
+            get
+            {
+                return new PermissionRepository();
+                
+            }
+        }
+
 
         public int SaveChanges()
         {

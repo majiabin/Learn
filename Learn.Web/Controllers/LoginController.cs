@@ -23,14 +23,18 @@ namespace Learn.Web.Controllers
             return View("Index");
         }
 
-        public ActionResult Login(Employee model)
+        public ActionResult Login(Employee model,string AutoLogin)
         {
             int num = employeeService.Login(model);
             if (num > 0)
             {
-                Session["userInfo"] = model;
+                Employee res = employeeService.GetList(
+              c => c.EmpLoginName == model.EmpLoginName && c.EmpLoginPwd == model.EmpLoginPwd).FirstOrDefault();
+                Session["userInfo"] = res;
                 ViewBag.Message = "登陆成功";
-
+                HttpCookie httpCookie = new HttpCookie("uInfo", model.EmpId.ToString());
+                httpCookie.Expires = DateTime.Now.AddDays(7);
+                Response.Cookies.Add(httpCookie);
                 return RedirectToAction("Index", "Home");
             }
             else

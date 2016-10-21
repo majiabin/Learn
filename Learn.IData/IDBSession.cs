@@ -11,6 +11,7 @@ namespace Learn.IData
         IDepartmentRepository DepartmentRepository { get; }
         IRoleRepository RoleRepository { get; }
         IEmployeeRepository EmployeeRepository { get; }
+        IPermissionRepository PermissionRepository { get; }
         int SaveChanges();
     }
 }

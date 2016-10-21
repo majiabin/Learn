@@ -4,7 +4,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<script>
+    $(function () {
+        thisAppPage.init();
+    });
 
+    var thisAppPage = {
+        init: function () {
+            this.initEvents();
+            this.initController();
+        },
+        initEvents: function () {
+            $(document).on("click", "#autoLogin", function () {
+                thisAppPage.switchSelected();
+            });
+        },
+        initController: function () {
+
+        },
+        switchSelected:function() {
+            var hasChk = $('#autoLogin').is(':checked');
+            alert(hasChk);
+            if (hasChk) {
+                $('#autoLogin').val(true);
+                /*已选中*/
+            } else {
+                $('#autoLogin').val(false);
+                /*未选中*/
+            }
+        }
+    }
+</script>
 
 <style>
     body {
@@ -37,7 +67,7 @@
                     @Html.TextBoxFor(c => c.EmpLoginPwd, new { @class = "promptInfo", @title = "请输入密码", @placeholder = "请输入密码", @required = true })
                 </div>
 
-                <button type="submit" class="btn btn-danger">立即登陆</button>    <label>@ViewBag.Message</label>
+                <button type="submit" class="btn btn-danger">立即登陆</button>  <input type="checkbox" id="autoLogin" name="AutoLogin" value="false"/>  <label>自动登陆</label> <label>@ViewBag.Message</label>
             }
 
 

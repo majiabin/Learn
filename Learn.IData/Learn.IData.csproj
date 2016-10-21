@@ -54,6 +54,7 @@
     <Compile Include="IDbContext.cs" />
     <Compile Include="IDBSession.cs" />
     <Compile Include="IEmployeeRepository.cs" />
+    <Compile Include="IPermissionRepository.cs" />
     <Compile Include="IRoleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
