@@ -12,8 +12,34 @@ using Learn.Core.Domain;
 
 namespace Learn.Web.Helper
 {
-    public class OperationContext : Controller, IRequiresSessionState
+    public class OperationContext
     {
+        #region Http 各种属性 的便捷访问
+
+        public HttpContext HttpContext
+        {
+            get { return HttpContext.Current; }
+        }
+
+
+        public HttpResponse Response
+        {
+            get { return HttpContext.Response; }
+        }
+
+        public HttpRequest Request
+        {
+            get { return HttpContext.Request; }
+        }
+
+        public HttpSessionState Session
+        {
+            get { return HttpContext.Session; }
+        }
+
+
+        #endregion
+
         #region 操作cookie中的登陆用户id  +int UserId
 
         public int UserId
@@ -37,29 +63,18 @@ namespace Learn.Web.Helper
                 }
             }
         }
+      
+        #endregion
 
         public Employee UserNow
         {
-            get
-            {
-                if (Session["userInfo"] != null)
-                {
-                    return (Employee)Session["userInfo"];
-                }
-                else
-                {
-                    return null;
-                }
-               
-            }
+            get { return (Employee)Session["userInfo"]; }
             set { Session["userInfo"] = (Employee)value; }
         }
 
-        #endregion
-
         #region 返回js提示 和 跳转
-     
-        public ActionResult JsMsg(string strMsg,string strBackUrl="")
+
+        public ActionResult JsMsg(string strMsg, string strBackUrl = "")
         {
             StringBuilder sbJs = new StringBuilder("<script>alert<\"").Append(strMsg).Append("\");");
             if (!strBackUrl.IsNullOrEmpty())
