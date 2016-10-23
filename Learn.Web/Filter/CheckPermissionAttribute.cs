@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using Learn.IService;
+using Learn.Web.Attrs;
 using Learn.Web.Helper;
 
 namespace Learn.Web.Filter
@@ -16,7 +17,6 @@ namespace Learn.Web.Filter
     {
         public CheckPermissionAttribute()
         {
-
         }
 
         private IEmployeeService employeeService;
@@ -25,25 +25,38 @@ namespace Learn.Web.Filter
             this.employeeService = employeeService;
         }
 
-     
 
+        protected override bool AuthorizeCore(HttpContextBase httpContext)
+        {
+            int i = 0;
+            return true;
+        }
         private OperationContext opeCur = new OperationContext();
+
+
+
         /// <summary>
         /// 授权方法 -再次检查权限
         /// </summary>
         /// <param name="filterContext"></param>
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            //1.检查是否登陆
-            if (IsLogin())
+            if (!IsDefined<SkipLoginAttribute>(filterContext))
             {
-                //2.检查登陆用户是否有 访问当前url的权限
+                //1.检查是否登陆
+                if (IsLogin())
+                {
+                    //2.检查登陆用户是否有 访问当前url的权限
+                    filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Manage/Index");
+                }
+                else
+                {
+                    //没有登陆
+                    filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Admin/Login");
+                }
             }
-            else   
-            {
-                //没有登陆
-                filterContext.Result = opeCur.JsMsg("你没有登陆", "/Login/Index");
-            }
+          
+
 
         }
 
@@ -69,6 +82,23 @@ namespace Learn.Web.Filter
                 }
             }
             return true;
+        }
+
+        #endregion
+
+        #region 跳过
+
+        /// <summary>
+        /// 检查 过滤器上下文 中的当前被请求的方法 和 控制器是否贴有标签
+        /// </summary>
+        /// <typeparam name="AttrType"></typeparam>
+        /// <param name="filterContext"></param>
+        /// <returns></returns>
+        public bool IsDefined<AttrType>(AuthorizationContext filterContext)
+        {
+            Type attrTypeObj = typeof(AttrType);
+            return filterContext.ActionDescriptor.IsDefined(attrTypeObj, false)
+                 || filterContext.ActionDescriptor.ControllerDescriptor.IsDefined(attrTypeObj, false);
         }
 
         #endregion

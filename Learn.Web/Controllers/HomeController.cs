@@ -25,8 +25,9 @@ namespace Learn.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-         List<Department> lis=   departmentService.GetList(c => true).ToList();
-            return View("Index");
+            // List<Department> lis=   departmentService.GetList(c => true).ToList();
+            return Redirect("/admin/");
+            //return View("Index");
         }
 
 

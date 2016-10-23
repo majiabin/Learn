@@ -1,7 +1,6 @@
 ﻿
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <script>
@@ -24,7 +23,6 @@
         },
         switchSelected:function() {
             var hasChk = $('#autoLogin').is(':checked');
-            alert(hasChk);
             if (hasChk) {
                 $('#autoLogin').val(true);
                 /*已选中*/
@@ -51,6 +49,8 @@
     }
 </style>
 
+@using System.Web.Mvc
+@using System.Web.Mvc.Html
 @model Learn.Core.Domain.Employee
 
 <div class="row topDiv">
@@ -67,7 +67,7 @@
                     @Html.TextBoxFor(c => c.EmpLoginPwd, new { @class = "promptInfo", @title = "请输入密码", @placeholder = "请输入密码", @required = true })
                 </div>
 
-                <button type="submit" class="btn btn-danger">立即登陆</button>  <input type="checkbox" id="autoLogin" name="AutoLogin" value="false"/>  <label>自动登陆</label> <label>@ViewBag.Message</label>
+                <button type="submit" class="btn btn-danger">立即登陆</button>  <input type="checkbox" id="autoLogin" name="AutoLogin" value="false" />  <label>自动登陆</label> <label>@ViewBag.Message</label>
             }
 
 
@@ -90,7 +90,6 @@
         </div>
     </div>
 </div>
-
 
 
 

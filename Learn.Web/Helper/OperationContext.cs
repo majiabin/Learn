@@ -76,7 +76,7 @@ namespace Learn.Web.Helper
 
         public ActionResult JsMsg(string strMsg, string strBackUrl = "")
         {
-            StringBuilder sbJs = new StringBuilder("<script>alert<\"").Append(strMsg).Append("\");");
+            StringBuilder sbJs = new StringBuilder("<script>alert(\"").Append(strMsg).Append("\");");
             if (!strBackUrl.IsNullOrEmpty())
             {
                 sbJs.Append("window.location=\"").Append(strBackUrl).Append("\";");

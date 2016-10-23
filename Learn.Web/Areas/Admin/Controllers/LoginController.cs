@@ -5,25 +5,29 @@ using System.Web;
 using System.Web.Mvc;
 using Learn.Core.Domain;
 using Learn.IService;
-using Learn.Service;
+using Learn.Web.Attrs;
 
-namespace Learn.Web.Controllers
+namespace Learn.Web.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {
+
+        // GET: Controllers/Login
         private IEmployeeService employeeService;
         public LoginController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
         }
 
+        [SkipLogin]
         // GET: Login
         public ActionResult Index()
         {
             return View("Index");
         }
 
-        public ActionResult Login(Employee model,string AutoLogin)
+        [SkipLogin]
+        public ActionResult Login(Employee model, string AutoLogin)
         {
             int num = employeeService.Login(model);
             if (num > 0)
@@ -35,7 +39,7 @@ namespace Learn.Web.Controllers
                 HttpCookie httpCookie = new HttpCookie("uInfo", model.EmpId.ToString());
                 httpCookie.Expires = DateTime.Now.AddDays(7);
                 Response.Cookies.Add(httpCookie);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Manage");
             }
             else
             {
@@ -44,5 +48,5 @@ namespace Learn.Web.Controllers
             return View("index");
         }
     }
-  
+
 }
