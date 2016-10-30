@@ -43,6 +43,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtension.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="T4\DbHelper.ttinclude" />
+    <None Include="T4\Manager.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="T4\Demo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Demo.cs</LastGenOutput>
+    </Content>
+    <None Include="T4\Reference.ttinclude" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

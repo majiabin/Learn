@@ -17,10 +17,11 @@ namespace Learn.Web
     {
         protected void Application_Start()
         {
+            AutoFac();
             FilterConfig.RegisterGlobalFilter(GlobalFilters.Filters);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            AutoFac();
+          
         }
 
 

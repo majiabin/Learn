@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using Learn.IService;
+using Learn.Service;
 using Learn.Web.Attrs;
 using Learn.Web.Helper;
 
@@ -15,25 +16,13 @@ namespace Learn.Web.Filter
     /// </summary>
     public class CheckPermissionAttribute : AuthorizeAttribute
     {
-        public CheckPermissionAttribute()
-        {
-        }
+       
+        private EmployeeService employeeService=new EmployeeService() ;
 
-        private IEmployeeService employeeService;
-        public CheckPermissionAttribute(IEmployeeService employeeService)
-        {
-            this.employeeService = employeeService;
-        }
-
-
-        protected override bool AuthorizeCore(HttpContextBase httpContext)
-        {
-            int i = 0;
-            return true;
-        }
+     
         private OperationContext opeCur = new OperationContext();
 
-
+        private List<string> listArea = new List<string>() {"admin"}; 
 
         /// <summary>
         /// 授权方法 -再次检查权限
@@ -41,23 +30,28 @@ namespace Learn.Web.Filter
         /// <param name="filterContext"></param>
         public override void OnAuthorization(AuthorizationContext filterContext)
         {
-            if (!IsDefined<SkipLoginAttribute>(filterContext))
+            if (filterContext.RouteData.DataTokens.ContainsKey("area"))
             {
-                //1.检查是否登陆
-                if (IsLogin())
+                //后去当前请求区域名称
+                string areaName = filterContext.RouteData.DataTokens["area"].ToString().ToLower();
+                if (listArea.Contains(areaName))
                 {
-                    //2.检查登陆用户是否有 访问当前url的权限
-                    filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Manage/Index");
-                }
-                else
-                {
-                    //没有登陆
-                    filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Admin/Login");
+                    if (!IsDefined<SkipLoginAttribute>(filterContext))
+                    {
+                        //1.检查是否登陆
+                        if (IsLogin())
+                        {
+                            //2.检查登陆用户是否有 访问当前url的权限
+                            filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Manage/Index");
+                        }
+                        else
+                        {
+                            //没有登陆
+                            filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Admin/Login");
+                        }
+                    }
                 }
             }
-          
-
-
         }
 
 
