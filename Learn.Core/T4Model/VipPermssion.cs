@@ -13,36 +13,24 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class VipPermssion
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public int VpId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public int VpUId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public int? version { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public byte[] definition { get; set; }
+		public int VpPId { get; set; }
 		 
     }
 	
-	   
-	 		 
-    }
+	 }

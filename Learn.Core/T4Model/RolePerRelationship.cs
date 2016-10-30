@@ -13,33 +13,23 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class RolePerRelationship
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public int RpId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public int RprRoleId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public int? version { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public byte[] definition { get; set; }
+		public int RprPerId { get; set; }
 		 
     }
 	

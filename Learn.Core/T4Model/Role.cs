@@ -13,33 +13,33 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class Role
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public int RoleId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public int RoleDepId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
+		public string RoleName { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int? version { get; set; }
+		public bool RoleIsDel { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public byte[] definition { get; set; }
+		public DateTime RoleAddTime { get; set; }
 		 
     }
 	

@@ -42,6 +42,38 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringExtension.cs" />
+    <Compile Include="T4\Demo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Department.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Employee.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\EmpRoleRelationship.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Permission.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\Role.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\RolePerRelationship.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\sysdiagrams.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\VipPermssion.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="T4\__MigrationHistory.cs">
+      <DependentUpon>Demo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="T4\DbHelper.ttinclude" />

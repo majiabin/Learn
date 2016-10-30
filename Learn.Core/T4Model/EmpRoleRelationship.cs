@@ -13,33 +13,23 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class EmpRoleRelationship
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public int ErId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public int ErUId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public int? version { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public byte[] definition { get; set; }
+		public int ErRId { get; set; }
 		 
     }
 	

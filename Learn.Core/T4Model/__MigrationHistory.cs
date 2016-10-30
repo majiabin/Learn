@@ -13,33 +13,28 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class __MigrationHistory
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public string MigrationId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public string ContextKey { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
+		public byte[] Model { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int? version { get; set; }
-		
-		/// <summary>
-		/// 
-		/// </summary>		
-		public byte[] definition { get; set; }
+		public string ProductVersion { get; set; }
 		 
     }
 	

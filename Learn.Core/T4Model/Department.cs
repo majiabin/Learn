@@ -13,33 +13,33 @@ using System;
 namespace Learn.Core
 {	
 
-	public partial class sysdiagrams
+	public partial class Department
     {
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public object name { get; set; }
+		public int DepId { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int principal_id { get; set; }
+		public string DepNames { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int diagram_id { get; set; }
+		public string DepRemark { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public int? version { get; set; }
+		public bool DepIsDel { get; set; }
 		
 		/// <summary>
 		/// 
 		/// </summary>		
-		public byte[] definition { get; set; }
+		public DateTime DepAddTime { get; set; }
 		 
     }
 	

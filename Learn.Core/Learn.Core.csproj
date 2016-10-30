@@ -49,43 +49,13 @@
     <Compile Include="Domain\UserInfo.cs" />
     <Compile Include="Domain\VipPermssion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="T4Model\Act_Activity.cs">
+    <Compile Include="T4Model\Department.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Act_ActivityInvite.cs">
+    <Compile Include="T4Model\Employee.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Act_ActivityMerchandise.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Act_ActivityParticipator.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Act_ConsumeBill.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Import_StoreInfo.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Import_Task.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\KS_TestPaper.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\KS_TestToQuestion.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\KS_UserExamResult.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Log_BusinessOperate.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Log_SystemException.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Log_SystemInfo.cs">
+    <Compile Include="T4Model\EmpRoleRelationship.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="T4Model\Model.cs">
@@ -93,184 +63,22 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Passport_Signin_Info.cs">
+    <Compile Include="T4Model\Permission.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Passport_Ticket.cs">
+    <Compile Include="T4Model\Role.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Passport_UserAccessLog.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Res_Courses.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Res_CoursesFavorite.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Res_LearnCourses.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\saleinfo.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_CommonAddress.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Function.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_FunctionGroup.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Gift.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Grade.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_GradePrivilege.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_GrowthValue.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_InActiveStore.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_IntegralDetail.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_MemberInfo.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_MemberPurchaseHistory.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Order.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_OrderDetail.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Organization.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_PageURL.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_RewardRegular.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_RoleFunction.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_ShoppingCart.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_SignIn.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_Store.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_StoreSRIndex.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_StoreSRIndexCompletionDetail.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_User.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_UserIntegralAbnormal.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Site_UserRole.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\SRRecruitmentMember.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_ContinuousRewards.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_GoodsShelfDisplay.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_InventoryCalibration.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_Merchandise.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_MerchandiseInventory.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_PurchasingOrder.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_PurchasingOrderDetail.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_StoreSalesDailyStatement.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_StoreSalesData.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_StoreSalesInMkt.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Supply_SuggestPurchasingOrder.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Suppy_InMarketAndInventoryAbnormalRemid.cs">
+    <Compile Include="T4Model\RolePerRelationship.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="T4Model\sysdiagrams.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Sys_Area.cs">
+    <Compile Include="T4Model\VipPermssion.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="T4Model\Sys_City.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_Dic.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_DicType.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_NotifyReceive.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_NotifySend.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_NotifySendRange.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_NotifyTemplate.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_Province.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\Sys_Role.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\TestLog.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\TK_Question.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\TK_QuestionBank.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="T4Model\TK_QuestionOption.cs">
+    <Compile Include="T4Model\__MigrationHistory.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
   </ItemGroup>
