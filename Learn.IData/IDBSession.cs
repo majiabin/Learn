@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Learn.IData
 {
-    public interface IDBSession
+    public partial interface IDBSession
     {
-        IDepartmentRepository DepartmentRepository { get; }
-        IRoleRepository RoleRepository { get; }
-        IEmployeeRepository EmployeeRepository { get; }
-        IPermissionRepository PermissionRepository { get; }
+
+       # region 此处有T4自动生成
+
+        //IDepartmentRepository DepartmentRepository { get; }
+        //IRoleRepository RoleRepository { get; }
+        //IEmployeeRepository EmployeeRepository { get; }
+        //IPermissionRepository PermissionRepository { get; }
+
+     # endregion
         int SaveChanges();
     }
 }

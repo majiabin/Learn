@@ -8,11 +8,16 @@ using Learn.IService;
 
 namespace Learn.Service
 {
-    public class RoleService : BaseService<Role>, IRoleService
+    public partial class RoleService : BaseService<Role>, IRoleService
     {
-        public override void SetCurrentDal()
-        {
-            CurrentService = dbSession.RoleRepository;
-        }
+    #pragma region 此处有T4自动生成
+
+        //public override void SetCurrentDal()
+        //{
+        //    CurrentService = dbSession.RoleRepository;
+        //}
+
+    #pragma endregion
     }
+
 }

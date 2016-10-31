@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Learn.Core.Domain
 {
-    public class RolePerRelationship
+    public partial class RolePerRelationship
     {
-        public int RpId { get; set; }
-        public int RprRoleId { get; set; }
-        public int RprPerId { get; set; }
+        #region 此处由T4自动生成
+        //public int RpId { get; set; }
+        //public int RprRoleId { get; set; }
+        //public int RprPerId { get; set; }
+        #endregion
+
 
         public virtual Role Role { get; set; }
         public virtual Permission Permission { get; set; }

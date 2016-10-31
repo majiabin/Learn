@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="Domain\Department.cs" />
     <Compile Include="Domain\Employee.cs" />
-    <Compile Include="Domain\EmpRoleRealationship.cs" />
+    <Compile Include="Domain\EmpRoleRelationship.cs" />
     <Compile Include="Domain\Permission.cs" />
     <Compile Include="Domain\Role.cs" />
     <Compile Include="Domain\RolePerRelationship.cs" />

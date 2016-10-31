@@ -12,22 +12,23 @@
 //------------------------------------------------------------------------------
 
 
-
 using System;
-namespace Learn.Core
-{	
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
+namespace Learn.Core.Domain
+{	
 <# manager.EndBlock(); #>
 
 <# foreach(DbTable table in DbHelper.GetDbTables(config.ConnectionStr,config.DbDatabase)) {#>
-  
-	 		 
     <#manager.StartNewFile(table.TableName+".cs");#>
 	public partial class <#=table.TableName#>
     {
 		<# foreach(DbColumn column in DbHelper.GetDbColumns(config.ConnectionStr, config.DbDatabase, table.TableName)){#>
 
-		/// <summary>
+        /// <summary>
 		/// <#=column.Remark#>
 		/// </summary>		
 		public <#= column.CSharpType#><# 
@@ -39,6 +40,7 @@ namespace Learn.Core
 	
 
   <# manager.StartFooter(); #>
+
 }
 <# manager.EndBlock(); #>
 

@@ -7,7 +7,7 @@ using Learn.Core.Domain;
 
 namespace Learn.IService
 {
-   public interface IEmployeeService:IBaseService<Employee>
+   public partial interface IEmployeeService:IBaseService<Employee>
     {
        int Login(Employee model);
     }

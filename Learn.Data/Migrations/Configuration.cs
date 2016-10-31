@@ -1,3 +1,5 @@
+using Learn.Data.Context;
+
 namespace Learn.Data.Migrations
 {
     using System;
@@ -5,16 +7,18 @@ namespace Learn.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Learn.Data.Context.LearnContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<LearnContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
+            
         }
 
-        protected override void Seed(Learn.Data.Context.LearnContext context)
+        protected override void Seed(LearnContext context)
         {
+            
             //  This method will be called after migrating to the latest version.
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
@@ -27,6 +31,14 @@ namespace Learn.Data.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+            
+            
+            
+            
         }
+
+        
+
+
     }
 }

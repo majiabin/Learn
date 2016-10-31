@@ -30,11 +30,14 @@ namespace Learn.Service
             return null;
         }
 
-        public override void SetCurrentDal()
-        {
-            CurrentService = dbSession.EmployeeRepository;
-        }
+        #pragma region 此处有T4自动生成
+        //public override void SetCurrentDal()
+        //{
+        //    CurrentService = dbSession.EmployeeRepository;
+        //}
+        #pragma endregion
 
-        
+
+
     }
 }

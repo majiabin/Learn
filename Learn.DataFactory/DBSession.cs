@@ -9,38 +9,38 @@ using Learn.IData;
 
 namespace Learn.DataFactory
 {
-    public class DBSession : IDBSession
-    {
-        public IDepartmentRepository DepartmentRepository
-        {
-            get
-            {
-                return new DepartmentRepository();
-            }
-        }
+    public partial class DBSession : IDBSession
+    {   
+        //public IDepartmentRepository DepartmentRepository
+        //{
+        //    get
+        //    {
+        //        return new DepartmentRepository();
+        //    }
+        //}
 
-        public IRoleRepository RoleRepository
-        {
-            get
-            {
-                return new RoleRepository();
-            }
-        }
+        //public IRoleRepository RoleRepository
+        //{
+        //    get
+        //    {
+        //        return new RoleRepository();
+        //    }
+        //}
 
-        public IEmployeeRepository EmployeeRepository {
-            get
-            {
-                return new EmployeeRepository();
-            }
-        }
+        //public IEmployeeRepository EmployeeRepository {
+        //    get
+        //    {
+        //        return new EmployeeRepository();
+        //    }
+        //}
 
-        public IPermissionRepository PermissionRepository {
-            get
-            {
-                return new PermissionRepository();
+        //public IPermissionRepository PermissionRepository {
+        //    get
+        //    {
+        //        return new PermissionRepository();
                 
-            }
-        }
+        //    }
+        //}
 
 
         public int SaveChanges()

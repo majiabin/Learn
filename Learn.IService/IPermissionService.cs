@@ -7,7 +7,7 @@ using Learn.Core.Domain;
 
 namespace Learn.IService
 {
-    public interface IPermissionService:IBaseService<Permission>
+    public partial interface IPermissionService:IBaseService<Permission>
     {
 
     }
