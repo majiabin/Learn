@@ -80,13 +80,7 @@
     <Compile Include="IRoleRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
-    <Compile Include="IsysdiagramsRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
     <Compile Include="IVipPermssionRepository.cs">
-      <DependentUpon>IRepository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="I__MigrationHistoryRepository.cs">
       <DependentUpon>IRepository.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -68,13 +68,7 @@
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
     <Compile Include="IRoleService.cs" />
-    <Compile Include="IsysdiagramsRepository.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
     <Compile Include="IVipPermssionRepository.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
-    <Compile Include="I__MigrationHistoryRepository.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

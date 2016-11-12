@@ -29,6 +29,12 @@ namespace Learn.Data
   
   
 		<# foreach(DbTable table in DbHelper.GetDbTables(config.ConnectionStr,config.DbDatabase)) {#>
+		<#
+		 if(table.TableName =="__MigrationHistory"||table.TableName =="sysdiagrams"){
+		   continue;
+		 }
+		#>
+
 		 <#manager.StartNewFile(table.TableName+"Repository.cs");#>
 	    public partial class <#=table.TableName#>Repository:BaseRepository<<#= table.TableName #>>,I<#= table.TableName #>Repository
 	    {

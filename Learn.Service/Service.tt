@@ -29,6 +29,12 @@ namespace Learn.Service
   
   
 		<# foreach(DbTable table in DbHelper.GetDbTables(config.ConnectionStr,config.DbDatabase)) {#>
+		<#
+	 if(table.TableName =="__MigrationHistory"||table.TableName =="sysdiagrams"){
+		   continue;
+		 }
+		#>
+
 		 <#manager.StartNewFile(table.TableName+"Repository.cs");#>
 	   public partial class <#=table.TableName#>Service:BaseService<<#= table.TableName #>>,I<#= table.TableName #>Service
 	    {

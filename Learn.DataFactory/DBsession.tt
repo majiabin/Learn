@@ -27,6 +27,12 @@ namespace Learn.DataFactory
     {
 <# foreach(DbTable table in DbHelper.GetDbTables(config.ConnectionStr,config.DbDatabase)) {#>
 
+	<#
+		 if(table.TableName =="__MigrationHistory"||table.TableName =="sysdiagrams"){
+		   continue;
+		 }
+		#>
+
 	   public I<#=table.TableName#>Repository <#=table.TableName#>Repository
 	   {
 	        get

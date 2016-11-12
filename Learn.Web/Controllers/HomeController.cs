@@ -12,22 +12,10 @@ namespace Learn.Web.Controllers
     public class HomeController : Controller
     {
 
-        private IRoleService roleService;
-        private IDepartmentService departmentService;
-
-
-        public HomeController(IRoleService roleService, IDepartmentService departmentService)
-        {
-            this.departmentService = departmentService;
-            this.roleService = roleService;
-        }
-
         // GET: Home
         public ActionResult Index()
         {
-            // List<Department> lis=   departmentService.GetList(c => true).ToList();
             return Redirect("/admin/");
-            //return View("Index");
         }
 
 

@@ -8,11 +8,9 @@ namespace Learn.Core.Domain
 {
     public partial class RolePerRelationship
     {
-        #region 此处由T4自动生成
-        //public int RpId { get; set; }
-        //public int RprRoleId { get; set; }
-        //public int RprPerId { get; set; }
-        #endregion
+        public int RpId { get; set; }
+        public int RprRoleId { get; set; }
+        public int RprPerId { get; set; }
 
 
         public virtual Role Role { get; set; }

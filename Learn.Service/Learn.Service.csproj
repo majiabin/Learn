@@ -67,13 +67,7 @@
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
     <Compile Include="RoleService.cs" />
-    <Compile Include="sysdiagramsRepository.cs">
-      <DependentUpon>Service.tt</DependentUpon>
-    </Compile>
     <Compile Include="VipPermssionRepository.cs">
-      <DependentUpon>Service.tt</DependentUpon>
-    </Compile>
-    <Compile Include="__MigrationHistoryRepository.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
   </ItemGroup>

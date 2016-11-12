@@ -88,13 +88,7 @@
     <Compile Include="RoleRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagramsRepository.cs">
-      <DependentUpon>Repository.tt</DependentUpon>
-    </Compile>
     <Compile Include="VipPermssionRepository.cs">
-      <DependentUpon>Repository.tt</DependentUpon>
-    </Compile>
-    <Compile Include="__MigrationHistoryRepository.cs">
       <DependentUpon>Repository.tt</DependentUpon>
     </Compile>
   </ItemGroup>

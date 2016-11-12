@@ -10,38 +10,41 @@ using Learn.IData;
 namespace Learn.DataFactory
 {
     public partial class DBSession : IDBSession
-    {   
-        //public IDepartmentRepository DepartmentRepository
-        //{
-        //    get
-        //    {
-        //        return new DepartmentRepository();
-        //    }
-        //}
+    {
+        # region 此处由T4自动生成
 
-        //public IRoleRepository RoleRepository
-        //{
-        //    get
-        //    {
-        //        return new RoleRepository();
-        //    }
-        //}
+                //public IDepartmentRepository DepartmentRepository
+                //{
+                //    get
+                //    {
+                //        return new DepartmentRepository();
+                //    }
+                //}
 
-        //public IEmployeeRepository EmployeeRepository {
-        //    get
-        //    {
-        //        return new EmployeeRepository();
-        //    }
-        //}
+                //public IRoleRepository RoleRepository
+                //{
+                //    get
+                //    {
+                //        return new RoleRepository();
+                //    }
+                //}
 
-        //public IPermissionRepository PermissionRepository {
-        //    get
-        //    {
-        //        return new PermissionRepository();
-                
-        //    }
-        //}
+                //public IEmployeeRepository EmployeeRepository {
+                //    get
+                //    {
+                //        return new EmployeeRepository();
+                //    }
+                //}
 
+                //public IPermissionRepository PermissionRepository {
+                //    get
+                //    {
+                //        return new PermissionRepository();
+
+                //    }
+                //}
+
+        # endregion
 
         public int SaveChanges()
         {

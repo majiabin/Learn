@@ -11,15 +11,13 @@ namespace Learn.Core.Domain
     /// </summary>
     public partial class Department
     {
-        #region 此处由T4自动生成
 
-        //public int DepId { get; set; }
-        //public string DepNames { get; set; }
-        //public string DepRemark { get; set; }
-        //public bool DepIsDel { get; set; }
-        //public DateTime DepAddTime { get; set; }
+        public int DepId { get; set; }
+        public string DepNames { get; set; }
+        public string DepRemark { get; set; }
+        public bool DepIsDel { get; set; }
+        public DateTime DepAddTime { get; set; }
 
-        #endregion
         public ICollection<Employee> Employees { get; set; }
     }
 }
