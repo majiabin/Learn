@@ -41,33 +41,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseService.cs" />
-    <Compile Include="DepartmentRepository.cs">
+    <Compile Include="DepartmentService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeRepository.cs">
+    <Compile Include="EmployeeService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="EmployeeService.cs" />
-    <Compile Include="EmpRoleRelationshipRepository.cs">
+    <Compile Include="EmpRoleRelationshipService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="PermissionRepository.cs">
+    <Compile Include="PartialClass\DepartmentService.cs" />
+    <Compile Include="PartialClass\EmployeeService.cs" />
+    <Compile Include="PermissionService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolePerRelationshipService.cs">
+      <DependentUpon>Service.tt</DependentUpon>
+    </Compile>
     <Compile Include="Service.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="RolePerRelationshipRepository.cs">
+    <Compile Include="RoleService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
-    <Compile Include="RoleRepository.cs">
-      <DependentUpon>Service.tt</DependentUpon>
-    </Compile>
-    <Compile Include="RoleService.cs" />
-    <Compile Include="VipPermssionRepository.cs">
+    <Compile Include="VipPermssionService.cs">
       <DependentUpon>Service.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -98,6 +98,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

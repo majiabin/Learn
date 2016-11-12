@@ -56,14 +56,14 @@ namespace Learn.Service
         #endregion
 
         #region 查找
-        public IQueryable<T> GetList(Expression<Func<T, bool>> whereLamada)
+        public IQueryable<T> Where(Expression<Func<T, bool>> whereLamada)
         {
-            return CurrentService.GetList(whereLamada);
+            return CurrentService.Where(whereLamada);
         }
 
-        public IQueryable<T> GetPage<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada, Func<T, S> orderbyLamada, bool isAsc)
+        public IQueryable<T> Where<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada, Func<T, S> orderbyLamada, bool isAsc)
         {
-            return CurrentService.GetPage<S>(pageSize, pageIndex, out total, whereLamada, orderbyLamada, isAsc);
+            return CurrentService.Where<S>(pageSize, pageIndex, out total, whereLamada, orderbyLamada, isAsc);
         }
         #endregion
 

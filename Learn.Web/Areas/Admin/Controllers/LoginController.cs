@@ -18,7 +18,6 @@ namespace Learn.Web.Areas.Admin.Controllers
         {
             this.employeeService = employeeService;
         }
-
         [SkipLogin]
         // GET: Login
         public ActionResult Index()
@@ -32,7 +31,7 @@ namespace Learn.Web.Areas.Admin.Controllers
             int num = employeeService.Login(model);
             if (num > 0)
             {
-                Employee res = employeeService.GetList(
+                Employee res = employeeService.Where(
               c => c.EmpLoginName == model.EmpLoginName && c.EmpLoginPwd == model.EmpLoginPwd).FirstOrDefault();
                 Session["userInfo"] = res;
                 ViewBag.Message = "登陆成功";

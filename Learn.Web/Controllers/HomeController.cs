@@ -15,7 +15,7 @@ namespace Learn.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return Redirect("/admin/");
+            return Redirect("/admin/Login/Index");
         }
 
 

@@ -35,7 +35,7 @@ namespace Learn.Service
 		 }
 		#>
 
-		 <#manager.StartNewFile(table.TableName+"Repository.cs");#>
+		 <#manager.StartNewFile(table.TableName+"Service.cs");#>
 	   public partial class <#=table.TableName#>Service:BaseService<<#= table.TableName #>>,I<#= table.TableName #>Service
 	    {
 			public override void SetCurrentDal()

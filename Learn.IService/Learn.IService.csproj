@@ -41,36 +41,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IBaseService.cs" />
-    <Compile Include="IDepartmentRepository.cs">
+    <Compile Include="IDepartmentService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IDepartmentService.cs" />
-    <Compile Include="IEmployeeRepository.cs">
+    <Compile Include="IEmployeeService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IEmployeeService.cs" />
-    <Compile Include="IEmpRoleRelationshipRepository.cs">
+    <Compile Include="IEmpRoleRelationshipService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IPermissionRepository.cs">
+    <Compile Include="IPermissionService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IPermissionService.cs" />
+    <Compile Include="IRolePerRelationshipService.cs">
+      <DependentUpon>IService.tt</DependentUpon>
+    </Compile>
     <Compile Include="IService.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRolePerRelationshipRepository.cs">
+    <Compile Include="IRoleService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRoleRepository.cs">
+    <Compile Include="IVipPermssionService.cs">
       <DependentUpon>IService.tt</DependentUpon>
     </Compile>
-    <Compile Include="IRoleService.cs" />
-    <Compile Include="IVipPermssionRepository.cs">
-      <DependentUpon>IService.tt</DependentUpon>
-    </Compile>
+    <Compile Include="PartialClass\IDepartmentService.cs" />
+    <Compile Include="PartialClass\IEmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

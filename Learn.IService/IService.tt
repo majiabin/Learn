@@ -35,7 +35,7 @@ namespace Learn.IService
 		 }
 		#>
 
-		 <#manager.StartNewFile("I"+table.TableName+"Repository.cs");#>
+		 <#manager.StartNewFile("I"+table.TableName+"Service.cs");#>
 	    public partial interface I<#=table.TableName#>Service:IBaseService<<#= table.TableName #>>
 	    {
 			

@@ -59,11 +59,11 @@ namespace Learn.Data
         #endregion
 
         #region 查询
-        public IQueryable<T> GetList(System.Linq.Expressions.Expression<Func<T, bool>> whereLamada)
+        public IQueryable<T> Where(System.Linq.Expressions.Expression<Func<T, bool>> whereLamada)
         {
             return dbContext.Set<T>().Where(whereLamada);
         }
-        public IQueryable<T> GetPage<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada, Func<T, S> orderbyLamada, bool isAsc)
+        public IQueryable<T> Where<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada, Func<T, S> orderbyLamada, bool isAsc)
         {
             total = dbContext.Set<T>().Where(whereLamada).Count();
             if (isAsc)

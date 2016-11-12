@@ -41,13 +41,28 @@ namespace Learn.Web.Filter
                         //1.检查是否登陆
                         if (IsLogin())
                         {
-                            //2.检查登陆用户是否有 访问当前url的权限
-                            filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Manage/Index");
+                            if (!IsDefined<SkipPermissionAttrbute>(filterContext))
+                            {
+                                //2.检查登陆用户是否有 访问当前url的权限
+                                if (!opeCur.HasPermission(areaName,filterContext.ActionDescriptor.ControllerDescriptor.ControllerName,filterContext.ActionDescriptor.ActionName,opeCur.Request.HttpMethod))
+                                {
+                                    //没有登陆
+                                    filterContext.Result = opeCur.JsMsg("您没有进行此项操作的权限", "/Admin/Login/Index");
+                                }
+                                else  //如果有权限
+                                {
+                                    //LoadMenuBtns(filterContext);
+                                }
+
+                            }
+                            else   //跳过权限检查后
+                            {
+                                //LoadMenuBtns(filterContext);
+                            }
                         }
-                        else
+                        else //没有登陆
                         {
-                            //没有登陆
-                            filterContext.Result = opeCur.JsMsg("你没有登陆", "/Learn.Web/Admin/Login");
+                            filterContext.Result = opeCur.JsMsg("你没有登陆", "/Admin/Login/Index");
                         }
                     }
                 }
@@ -72,7 +87,7 @@ namespace Learn.Web.Filter
                 else
                 {
                     var usrId = opeCur.UserId;
-                    opeCur.UserNow = employeeService.GetList(o => o.EmpId == usrId).SingleOrDefault();
+                    opeCur.UserNow = employeeService.Where(o => o.EmpId == usrId).SingleOrDefault();
                 }
             }
             return true;

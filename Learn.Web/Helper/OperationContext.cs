@@ -63,14 +63,16 @@ namespace Learn.Web.Helper
                 }
             }
         }
-      
+
         #endregion
 
+        #region 操作Session中的登录用户对象 Employee UsrNow
         public Employee UserNow
         {
             get { return (Employee)Session["userInfo"]; }
             set { Session["userInfo"] = (Employee)value; }
         }
+        #endregion
 
         #region 返回js提示 和 跳转
 
@@ -89,5 +91,13 @@ namespace Learn.Web.Helper
         }
 
         #endregion
+
+        public bool HasPermission(string strAreaName, string strControllerName, string strActionName, string strFormMethod)
+        {
+
+            return true;
+        }
+
+
     }
 }

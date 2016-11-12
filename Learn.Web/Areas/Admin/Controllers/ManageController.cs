@@ -5,6 +5,7 @@ using System.Security;
 using System.Web;
 using System.Web.Mvc;
 using Learn.IService;
+using Learn.Web.Attrs;
 
 namespace Learn.Web.Areas.Admin.Controllers
 {
@@ -16,13 +17,14 @@ namespace Learn.Web.Areas.Admin.Controllers
             this.permissionService = permissionService;
         }
 
-
+        [SkipPermissionAttrbute]
         // GET: Admin/Manage
         public ActionResult Index()
         {
             return View("Index");
         }
 
+        [SkipPermissionAttrbute]
         /// <summary>
         /// 获取菜单
         /// </summary>

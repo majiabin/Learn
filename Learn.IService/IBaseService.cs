@@ -26,9 +26,9 @@ namespace Learn.IService
         #endregion
 
         #region 查询
-        IQueryable<T> GetList(Expression<Func<T, bool>> whereLamada);
+        IQueryable<T> Where(Expression<Func<T, bool>> whereLamada);
 
-        IQueryable<T> GetPage<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada,Func<T, S> orderbyLamada, bool isAsc);
+        IQueryable<T> Where<S>(int pageSize, int pageIndex, out int total, Func<T, bool> whereLamada,Func<T, S> orderbyLamada, bool isAsc);
         #endregion
     }
 }
