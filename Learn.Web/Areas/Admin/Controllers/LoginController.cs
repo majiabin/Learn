@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using Learn.Core.Domain;
 using Learn.IService;
 using Learn.Web.Attrs;
+using Learn.Web.Helper;
 
 namespace Learn.Web.Areas.Admin.Controllers
 {
@@ -14,6 +15,7 @@ namespace Learn.Web.Areas.Admin.Controllers
 
         // GET: Controllers/Login
         private IEmployeeService employeeService;
+        private OperationContext operationContext = new OperationContext();
         public LoginController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
@@ -22,29 +24,35 @@ namespace Learn.Web.Areas.Admin.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            
             return View("Index");
         }
 
         [SkipLogin]
-        public ActionResult Login(Employee model, string AutoLogin)
+        public ActionResult Login(string empLoginName, string empLoginPwd, string autoLogin)
         {
-            int num = employeeService.Login(model);
+            int num = employeeService.Login(empLoginName, empLoginPwd);
             if (num > 0)
             {
                 Employee res = employeeService.Where(
-              c => c.EmpLoginName == model.EmpLoginName && c.EmpLoginPwd == model.EmpLoginPwd).FirstOrDefault();
+              c => c.EmpLoginName == empLoginName && c.EmpLoginPwd == empLoginPwd).FirstOrDefault();
                 Session["userInfo"] = res;
                 ViewBag.Message = "登陆成功";
-                HttpCookie httpCookie = new HttpCookie("uInfo", model.EmpId.ToString());
-                httpCookie.Expires = DateTime.Now.AddDays(7);
-                Response.Cookies.Add(httpCookie);
-                return RedirectToAction("Index", "Manage");
+                if (autoLogin != null)
+                {
+                    HttpCookie httpCookie = new HttpCookie("uInfo", res.EmpId.ToString());
+                    httpCookie.Expires = DateTime.Now.AddDays(7);
+                    Response.Cookies.Add(httpCookie);
+                }
+                operationContext.UserPerssion = employeeService.GetUserPerssion(res.EmpId);
+                return Content("ok");
             }
             else
             {
                 ViewBag.Message = "用户或密码错误";
+                return Content("no");
             }
-            return View("index");
+
         }
     }
 

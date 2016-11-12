@@ -9,6 +9,7 @@ namespace Learn.IService
 {
    public partial interface IEmployeeService:IBaseService<Employee>
     {
-        int Login(Employee model);
+        int Login(string userName,string userPwd);
+        List<Permission> GetUserPerssion(int userId);
     }
 }

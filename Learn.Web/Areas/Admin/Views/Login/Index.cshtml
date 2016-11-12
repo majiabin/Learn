@@ -9,6 +9,10 @@
     });
 
     var thisAppPage = {
+        urls: {
+            action_Login: "@Url.Action("Login", "Login")",
+            action_Index: "@Url.Action("Index", "Manage")",
+        },
         init: function () {
             this.initEvents();
             this.initController();
@@ -17,9 +21,22 @@
             $(document).on("click", "#autoLogin", function () {
                 thisAppPage.switchSelected();
             });
+            $("#submitBtn").click(function() {
+                thisAppPage.submitData();
+            });
         },
         initController: function () {
-
+            thisAppPage.submitData();
+        },
+        submitData: function () {
+            var empLoginName = $("#EmpLoginName").val();
+            var empLoginPwd = $("#EmpLoginPwd").val();
+            var autoLogin = $("#autoLogin").val();
+            $.post(thisAppPage.urls.action_Login, { empLoginName: empLoginName, empLoginPwd: empLoginPwd, autoLogin: autoLogin }, function (data) {
+                if (data=="ok") {
+                    window.location.href = thisAppPage.urls.action_Index;
+                }
+            });
         },
         switchSelected:function() {
             var hasChk = $('#autoLogin').is(':checked');
@@ -51,24 +68,21 @@
 
 @using System.Web.Mvc
 @using System.Web.Mvc.Html
-@model Learn.Core.Domain.Employee
 
 <div class="row topDiv">
     <div class="col-md-6  leftDiv">
         <div class="col-md-offset-8">
 
-            @using (@Html.BeginForm("Login", "Login", FormMethod.Post))
-            {
+          
                 <div class="form-group">
-                    @Html.TextBoxFor(c => c.EmpLoginName, new { @class = "promptInfo", @id = "userName", @title = "请输入用户名", @placeholder = "请输入用户名", @required = true })
-                </div>
+                    <input type="text" class="promptInfo" id="EmpLoginName" name="EmpLoginName"  required="true" placeholder="请输入用户名" />
+                  </div>
 
                 <div class="form-group">
-                    @Html.TextBoxFor(c => c.EmpLoginPwd, new { @class = "promptInfo", @title = "请输入密码", @placeholder = "请输入密码", @required = true })
+                    <input type="text" class="promptInfo" id="EmpLoginPwd"name="EmpLoginPwd" required="true" placeholder="请输入密码"/>
                 </div>
 
-                <button type="submit" class="btn btn-danger">立即登陆</button>  <input type="checkbox" id="autoLogin" name="AutoLogin" value="false" />  <label>自动登陆</label> <label>@ViewBag.Message</label>
-            }
+                <button type="button"  id="submitBtn"class="btn btn-danger">立即登陆</button>  <input type="checkbox" id="autoLogin" name="autoLogin"  value="false" />  <label>自动登陆</label> <label>@ViewBag.Message</label>
 
 
         </div>

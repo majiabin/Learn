@@ -92,6 +92,16 @@ namespace Learn.Web.Helper
 
         #endregion
 
+        #region 登陆用户的权限集合
+
+        public List<Permission> UserPerssion
+        {
+            get { return (List<Permission>)Session["userPerssion"]; }
+            set { Session["userPerssion"] = value; }
+        }
+
+        #endregion
+
         public bool HasPermission(string strAreaName, string strControllerName, string strActionName, string strFormMethod)
         {
 

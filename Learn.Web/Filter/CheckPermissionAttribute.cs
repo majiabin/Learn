@@ -32,7 +32,7 @@ namespace Learn.Web.Filter
         {
             if (filterContext.RouteData.DataTokens.ContainsKey("area"))
             {
-                //后去当前请求区域名称
+                //当前请求区域名称
                 string areaName = filterContext.RouteData.DataTokens["area"].ToString().ToLower();
                 if (listArea.Contains(areaName))
                 {
