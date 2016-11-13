@@ -34,7 +34,7 @@ namespace Learn.Service
                  .Select(item => item.ErRId)
                  .ToList();
             //根据角色id查找权限id集合
-            List<int> perssionIds = dbSession.RolePerRelationshipRepository.Where(item => roleIds.Contains(item.RprPerId))
+            List<int> perssionIds = dbSession.RolePerRelationshipRepository.Where(item => roleIds.Contains(item.RprRoleId))
                   .Select(item => item.RprPerId)
                   .ToList();
             //根据用户id查找特权id集合

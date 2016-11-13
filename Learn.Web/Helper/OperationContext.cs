@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
@@ -102,11 +103,49 @@ namespace Learn.Web.Helper
 
         #endregion
 
+        #region 操作上下文对象 +OperationContext Current
+
+        public static OperationContext Current
+        {
+            get
+            {
+                var operContext= CallContext.GetData(typeof (OperationContext).FullName) as OperationContext;
+                if (operContext==null)
+                {
+                    operContext = new OperationContext();
+                    CallContext.SetData(typeof(OperationContext).FullName,operContext);
+                }
+                return operContext;
+            }
+        }
+
+        #endregion
+
+        #region 是否有权限
+
         public bool HasPermission(string strAreaName, string strControllerName, string strActionName, string strFormMethod)
         {
 
             return true;
         }
+
+        #endregion
+
+
+        //------------------------------公共工具方法-----------------------------
+        System.Web.Script.Serialization.JavaScriptSerializer jss = new System.Web.Script.Serialization.JavaScriptSerializer();
+
+        #region 1.0 将对象转成 Json格式字符串 +string ToJson(object obj)
+        /// <summary>
+        /// 1.0 将对象转成 Json格式字符串
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
+        public string ToJson(object obj)
+        {
+            return jss.Serialize(obj);
+        }
+        #endregion
 
 
     }

@@ -10,12 +10,11 @@ using Learn.Web.Helper;
 
 namespace Learn.Web.Areas.Admin.Controllers
 {
-    public class LoginController : Controller
+    public class LoginController : BaseController
     {
 
         // GET: Controllers/Login
         private IEmployeeService employeeService;
-        private OperationContext operationContext = new OperationContext();
         public LoginController(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
@@ -24,7 +23,7 @@ namespace Learn.Web.Areas.Admin.Controllers
         // GET: Login
         public ActionResult Index()
         {
-            
+
             return View("Index");
         }
 
@@ -44,7 +43,7 @@ namespace Learn.Web.Areas.Admin.Controllers
                     httpCookie.Expires = DateTime.Now.AddDays(7);
                     Response.Cookies.Add(httpCookie);
                 }
-                operationContext.UserPerssion = employeeService.GetUserPerssion(res.EmpId);
+                OperCur.UserPerssion = employeeService.GetUserPerssion(res.EmpId);
                 return Content("ok");
             }
             else

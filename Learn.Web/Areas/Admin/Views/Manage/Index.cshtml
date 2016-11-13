@@ -1,7 +1,46 @@
 ﻿
 @{
+    Layout = null;
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<link href="~/scripts/jquery-easyui-1.5/themes/icon.css" rel="stylesheet" />
+<script src="@Url.Content("~/scripts/jquery-1.10.2.js")"></script>
+<script src="~/scripts/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+<link href="~/scripts/jquery-easyui-1.5/themes/gray/easyui.css" rel="stylesheet" />
+<script>
+    $(function () {
+        //3.初始树形菜单
+        $("#menuTree").tree({
+            url: "/Admin/Manage/GetMenu",
+            onLoadSuccess: function (node, jsonData) {
+                //如果返回的消息 对象 包含 Status属性，说明是返回的 json消息，那么就调用 msgProcess方法 统一处理
+                //                   不包含Status属性，说明 返回的是 节点json数据
+                if (jsonData.Status) {
+
+                }
+            },
+            onClick: nodeClick
+        });
+    });
+
+    function nodeClick(parameters) {
+        
+    }
+  
+   
+   
+</script>
+  <body class="easyui-layout">
+ 
+    <div data-options="region:'west',title:'菜单导航',split:true" style="width:180px;">
+        <ul id="menuTree"></ul>
+    </div>
+    <div data-options="region:'center'" style="padding:5px;background:#eee;">
+        <div id="tabBox"></div>
+    </div>
+    <div id="commonWindow"><iframe style="width: 99.9%; height: 99.4%; border: 0px;"></iframe></div>
+</body>
+
+
 
